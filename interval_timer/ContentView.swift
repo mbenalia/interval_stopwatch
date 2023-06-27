@@ -37,7 +37,7 @@ struct SplashView: View {
                 
                
             }
-        }
+        }   
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                 withAnimation {
@@ -289,12 +289,19 @@ struct ContentView: View {
 //
 //    }
   
+
 }
 
 
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        SplashView()
+        ContentView()
+            .previewDevice(PreviewDevice(rawValue: "iPhone 7"))
+        ContentView()
+            .previewDevice("iPhone SE")
+            .previewInterfaceOrientation(.landscapeLeft)
+            }
+        
     }
-}
+
